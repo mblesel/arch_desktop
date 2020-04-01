@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mount | grep usb && echo -e "Error: 'usb' mount point is already in use" && exit 1
+
+CHOICE=$(lsblk -lp | grep part | awk 'NF==6' | awk '{printf $1; printf " / "; print $4;}' | dmenu)
+DEVICE=$(echo ${CHOICE} | awk '{printf $1}')
+[[ ! -z $DEVICE ]] && sudo mount ${DEVICE} /mnt/usb
+

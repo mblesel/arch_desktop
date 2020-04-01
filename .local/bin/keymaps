@@ -1,0 +1,9 @@
+#!/bin/bash
+
+#
+# Prints key mappings for the given program
+#
+CHOICE=$(ls -l /home/michael/.local/share/keymaps | awk '{print $9;}' | dmenu -i -p "keymap:")
+cat /home/michael/.local/share/keymaps/${CHOICE}
+
+

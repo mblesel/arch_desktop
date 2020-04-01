@@ -1,0 +1,11 @@
+[Unit]
+Description=Change wallpaper and theme all 4 hours
+
+[Timer]
+OnBootSec=240min
+OnUnitActiveSec=240min
+
+[Install]
+WantedBy=timers.target
+
+

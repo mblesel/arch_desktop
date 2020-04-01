@@ -1,0 +1,45 @@
+ _ _____
+(_)___ /
+| | |_ \
+| |___) |
+|_|____/
+i3 keybinds.
+        KEY         +SUPER              +SUPER+SHIFT
+        ------------------------------------------------------
+        1-9         workspace <n>       move to workspace <n>
+        Return      split horiz.        split vertical
+        BackSpace   samedir split h.    samedir split vertical
+        TAB         workspace switch
+        SPACE^      toggle focus        floating toggle
+        ^           dmenuunicode
+        q           move scratchpad     kill window
+        w           rofi show windows
+
+        e                               exit i3
+        r           ranger              restart
+        t           tmux dropdown
+        z           resize left
+        u           resize down
+        i           resize up
+        o           resize right    
+        p          
+        a
+        s           screenshot
+        d           dmenu
+        f           fullscreen toggle
+        g           gaps off            gaps on
+        h           focus left          move left
+        j           focus down          move down
+        k           focus up            move up
+        l           focus right         move right
+        y
+        x
+        c           calculator          reload
+        v
+        b           transparency
+        n           notes               tmp notes
+        m           move center         ncmpcpp
+        Up          mpc toggle
+        DOWN        mpc stop
+        LEFT        mpc prev
+        RIGHT       mpc next

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mount | grep "usb" && sudo umount /mnt/usb && echo "Unmounted 'usb' mount point."

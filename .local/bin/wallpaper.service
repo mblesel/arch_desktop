@@ -1,0 +1,8 @@
+[Unit]
+Description=Wallpaper and color scheme change service
+
+[Service]
+Type=simple
+User=michael
+Environment=DISPLAY=:0
+ExecStart=/home/michael/.local/bin/fehbg
