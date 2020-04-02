@@ -52,7 +52,7 @@ signal=10
 # Displays number of active/total monitors and opens arandr if clicked
 [monitors]
 label=📺
-interval=30
+interval=once
 
 # Memory usage
 #

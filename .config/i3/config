@@ -184,6 +184,9 @@ bindsym $mod+Left exec --no-startup-id mpc prev && pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Down exec --no-startup-id mpc stop && pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Up  exec --no-startup-id mpc toggle && pkill -SIGRTMIN+11 i3blocks
 bindsym $mod+Right exec --no-startup-id mpc next && pkill -SIGRTMIN+11 i3blocks
+# volume
+bindsym $mod+plus exec --no-startup-id mpc volume +10 && pkill -SIGRTMIN+11 i3blocks
+bindsym $mod+minus exec --no-startup-id mpc volume -10 && pkill -SIGRTMIN+11 i3blocks
 
 # Screenshot
 bindsym $mod+s exec screenshot
