@@ -1,0 +1,8 @@
+[Unit]
+Description=Watches for mpd player events and refreshes i3block music player block
+
+[Service]
+Type=simple
+User=michael
+Environment=DISPLAY=:0
+ExecStart=/home/michael/.local/bin/mpd_event_watcher

@@ -16,13 +16,18 @@ alias g='grep'
 alias cptexa='cp /home/michael/Documents/templates/latex/artcl/artcl.tex'
 
 # rsync
-alias rs='rsync --progress'
-alias srs='sudo rsync --progress'
+alias rs='rsync -avHAXW --numeric-ids --info=progress2'
+alias srs='sudo rsync -avHAXW --numeric-ids --info=progress2'
 
 # Redo last command and put output in clipboard
 alias cpl='$(history -p !!) | xclip -selection clipboard -r'
 # copy pwd to clipboard
 alias cpwd='pwd | xclip -selection clipboard -r'
+# Show wallpaper service status
+alias wpt='systemctl status wallpaper.timer'
+
+#youtube-dl audio
+alias ytd='youtube-dl -i -f bestaudio'
 
 PS1='[\u@\h \W]\$ '
 
@@ -41,3 +46,4 @@ export PATH="/home/michael/Projects/lit:$PATH"
 #CATO
 export DAS_TOOL_ROOT="/home/michael/Projects/LLVM-Translation-Tool"
 
+source /usr/share/nvm/init-nvm.sh

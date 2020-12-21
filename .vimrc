@@ -129,6 +129,7 @@ map <C-n> :NERDTreeToggle<CR>
 let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_switch_buffer = 0
 nmap ; :CtrlPBuffer<CR>
 
 
@@ -136,7 +137,6 @@ nmap ; :CtrlPBuffer<CR>
 nnoremap <F5> :call CurtineIncSw()<CR>
 
 "YouCompleteMe
-let g:ycm_server_python_interpreter = 'python2'
 let g:ycm_global_ycm_extra_conf = '/home/michael/.config/ycm/.ycm_extra_conf.py'
 " Turn off preview window
 set completeopt-=preview

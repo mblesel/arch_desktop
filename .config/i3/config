@@ -9,6 +9,7 @@ gaps outer 10
 set $term --no-startup-id $TERMINAL
 set $mod Mod4
 
+
 # Set Xresources colors:
 set_from_resource $darkblack	color0  #000000
 set_from_resource $black        color8  #000000
@@ -141,9 +142,6 @@ workspace $ws3 gaps inner 0
 workspace $ws3 gaps outer 0
 
 for_window [class="Thunderbird"] move workspace $ws5
-for_window [class="Gajim"] resize set width 400
-for_window [class="Gajim"] [title="^.* - Gajim"] floating toggle
-
 
 # #---Basic Stuff---# #
 
@@ -153,9 +151,9 @@ bindsym $mod+Return split h exec i3-sensible-terminal
 # split horizontal
 bindsym $mod+Shift+Return split v exec i3-sensible-terminal
 # same dir vertical
-bindsym $mod+BackSpace split h exec samedir
+bindsym $mod+BackSpace split h exec ~/.local/bin/i3/samedir
 # same dir horizontal
-bindsym $mod+Shift+BackSpace split v exec samedir
+bindsym $mod+Shift+BackSpace split v exec ~/.local/bin/i3/samedir
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -167,12 +165,12 @@ bindsym $mod+Tab workspace back_and_forth
 floating_modifier $mod
 
 # Set transparency script
-bindsym $mod+b exec --no-startup-id transparency
+bindsym $mod+b exec --no-startup-id ~/.local/bin/i3/transparency
 
 # start dmenu 
 bindsym $mod+d exec dmenu_run
 
-bindsym $mod+asciicircum exec --no-startup-id  dmenuunicode
+bindsym $mod+asciicircum exec --no-startup-id  ~/.local/bin/i3/dmenuunicode
 
 # start ranger
 bindsym $mod+r exec $term -e ranger
@@ -189,13 +187,13 @@ bindsym $mod+plus exec --no-startup-id mpc volume +10 && pkill -SIGRTMIN+11 i3bl
 bindsym $mod+minus exec --no-startup-id mpc volume -10 && pkill -SIGRTMIN+11 i3blocks
 
 # Screenshot
-bindsym $mod+s exec screenshot
+bindsym $mod+s exec ~/.local/bin/i3/screenshot
 
 # #---Dropdowns---# #
-bindsym $mod+t			exec --no-startup-id ddspawn tmuxdd
-bindsym $mod+c			exec --no-startup-id ddspawn dropdowncalc
-bindsym $mod+n			exec --no-startup-id ddspawn dropdownnotes
-bindsym $mod+Shift+n	exec --no-startup-id ddspawn dropdowntmpnotes
+bindsym $mod+t			exec --no-startup-id ~/.local/bin/i3/ddspawn ~/.local/bin/i3/tmuxdd
+bindsym $mod+c			exec --no-startup-id ~/.local/bin/i3/ddspawn ~/.local/bin/i3/dropdowncalc
+bindsym $mod+n			exec --no-startup-id ~/.local/bin/i3/ddspawn ~/.local/bin/i3/dropdownnotes
+bindsym $mod+Shift+n	exec --no-startup-id ~/.local/bin/i3/ddspawn ~/.local/bin/i3/dropdowntmpnotes
 #Hide scratchpad
 bindsym $mod+q		    move scratchpad
 bindsym $mod+w		    exec --no-startup-id rofi -show window
@@ -219,10 +217,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # resizing of windows
-bindsym $mod+z	exec --no-startup-id ~/.local/bin/i3resize left
-bindsym $mod+u	exec --no-startup-id ~/.local/bin/i3resize down
-bindsym $mod+i	exec --no-startup-id ~/.local/bin/i3resize up
-bindsym $mod+o	exec --no-startup-id ~/.local/bin/i3resize right
+bindsym $mod+z	exec --no-startup-id ~/.local/bin/i3/i3resize left
+bindsym $mod+u	exec --no-startup-id ~/.local/bin/i3/i3resize down
+bindsym $mod+i	exec --no-startup-id ~/.local/bin/i3/i3resize up
+bindsym $mod+o	exec --no-startup-id ~/.local/bin/i3/i3resize right
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -239,7 +237,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec ~/.local/bin/i3exit
+bindsym $mod+Shift+e exec ~/.local/bin/i3/i3exit
 
 
 # special keys
@@ -256,32 +254,6 @@ bindsym XF86MonBrightnessUp	exec --no-startup-id xbacklight -inc 15
 #
 # #-- Deactivated --# #
 # 
-
-#bindsym $mod+r mode "resize"
-# resize window (you can also use the mouse for that)
-#mode "resize" {
-#        # These bindings trigger as soon as you enter the resize mode
-#
-#        # Pressing left will shrink the window’s width.
-#        # Pressing right will grow the window’s width.
-#        # Pressing up will shrink the window’s height.
-#        # Pressing down will grow the window’s height.
-#        bindsym j resize shrink width 10 px or 10 ppt
-#        bindsym k resize grow height 10 px or 10 ppt
-#        bindsym l resize shrink height 10 px or 10 ppt
-#        bindsym odiaeresis resize grow width 10 px or 10 ppt
-#
-#        # same bindings, but for the arrow keys
-#        bindsym Left resize shrink width 10 px or 10 ppt
-#        bindsym Down resize grow height 10 px or 10 ppt
-#        bindsym Up resize shrink height 10 px or 10 ppt
-#        bindsym Right resize grow width 10 px or 10 ppt
-#
-#        # back to normal: Enter or Escape or $mod+r
-#        bindsym Return mode "default"
-#        bindsym Escape mode "default"
-#        bindsym $mod+r mode "default"
-#}
 
 # change container layout (stacked, tabbed, toggle split)
 #bindsym $mod+s layout stacking

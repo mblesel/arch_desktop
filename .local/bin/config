@@ -3,7 +3,7 @@
 #
 # dmenu promt to open often used config files in vim
 #
-CHOICE=$(echo -e "i3\ni3blocks\nranger" | dmenu -i -p 'config file' | tr -d '\n')
+CHOICE=$(echo -e "i3\ni3blocks\nranger\nvim\nbash" | dmenu -i -p 'config file' | tr -d '\n')
 
 CONFIG_PATH=""
 
@@ -11,6 +11,8 @@ case $CHOICE in
     i3) CONFIG_PATH="/home/michael/.config/i3/config"  ;;
     i3blocks) CONFIG_PATH="/home/michael/.config/i3blocks/config" ;;
     ranger) CONFIG_PATH="/home/michael/.config/ranger/rc.conf" ;;
+    vim) CONFIG_PATH="/home/michael/.vimrc" ;;
+    bash) CONFIG_PATH="/home/michael/.bashrc" ;;
 esac
 
 vim $CONFIG_PATH
